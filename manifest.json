@@ -1,0 +1,85 @@
+{
+    "background_color": "#4758F0",
+    "theme_color": "#F5F5F5",
+    "dir": "ltr",
+    "display": "standalone",
+    "name": "DropletMap",
+    "orientation": "portrait",
+    "scope": "/",
+    "short_name": "DropletMap",
+    "start_url": "/index.html",
+    "categories": ["Mapas", "Transporte","Informação"],
+    "screenshots":[
+        {
+          "src": "images/confirmar.png",
+          "sizes": "540x812",
+          "type": "image/png"
+        },
+        {
+          "src": "images/inicial.png",
+          "sizes": "624x870",
+          "type": "image/png"
+        }
+      ],
+    "icons": [
+      {
+          "src": "icons/Assets.xcassets/AppIcon.appiconset/48.png",
+          "sizes": "48x48",
+          "type": "image/png"
+      },
+      {
+          "src": "icons/Assets.xcassets/AppIcon.appiconset/64.png",
+          "sizes": "64x64",
+          "type": "image/png"
+      },
+      {
+          "src": "icons/android/mipmap-hdpi/ic_launcher.png",
+          "sizes": "72x72",
+          "type": "image/png"
+      },
+      {
+          "src": "icons/android/mipmap-xhdpi/ic_launcher.png",
+          "sizes": "96x96",
+          "type": "image/png"
+      },
+      {
+          "src": "icons/Assets.xcassets/AppIcon.appiconset/167.png",
+          "sizes": "167x167",
+          "type": "image/png"
+      },
+      {
+          "src": "icons/android/mipmap-xxxhdpi/ic_launcher.png",
+          "sizes": "192x192",
+          "type": "image/png"
+      },
+      {
+          "src": "icons/Assets.xcassets/AppIcon.appiconset/196.png",
+          "sizes": "196x196",
+          "type": "image/png"
+      },
+      {
+          "src": "icons/Assets.xcassets/AppIcon.appiconset/256.png",
+          "sizes": "256x256",
+          "type": "image/png"
+      },
+      {
+          "src": "icons/Assets.xcassets/AppIcon.appiconset/512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any maskable"
+      },
+      {
+        "src": "icons/Assets.xcassets/AppIcon.appiconset/1024.png",
+        "sizes": "1024x1024",
+        "type": "image/png"
+      }
+    ],
+    "shortcuts": [
+        {
+          "name": "Contatos",
+          "url": "index.html",
+          "description": "Contatos"
+        }
+      ]
+  
+}

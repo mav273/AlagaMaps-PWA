@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="mapa.js"></script>
+
+        <!-- ÍCONS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"">
+
+        <!-- ARQUIVOS CSS -->
+        <link rel="stylesheet" href="./Css/main.css">
+        <link rel="stylesheet" href="./Css/mapa.css">
+
+        <!-- LEAFLET -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+        <!-- MARKER CLUSTER [css] -->
+        <link rel="stylesheet" href="./dist/MarkerCluster.css">
+        <link rel="stylesheet" href="./dist/MarkerCluster.Default.css">
+
+    </head>
+
+    <script src="./dist/leaflet.markercluster.js"></script>
+    <script src="./Javascript/pontos.js"></script>
+
+    <body>
+        <script src="./Javascript/responsividade.js"></script>
+
+        <!-- CABEÇALHO DA PÁGINA -->
+        <header>
+           <nav class="menu">
+                <input type="checkbox" class="menuTrigger">
+                <div class="linhas">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="./telaContatosUteis.html">Contatos úteis</a></li>
+                    <li><a href="">Fale conosco</a></li>
+                    <li><a href="">Configurações</a></li>
+                    <li><a href="">Nos avalie</a></li>
+                    <li><a href="">Sobre</a></li>
+                </ul>
+           </nav>
+            
+        </header>
+
+        <main>
+            <!-- O MAPA -->
+            <div id="map"></div>        
+
+            <!-- AQUI TEM TODA A INFORMAÇÃO DO LEAFLET, MARKER CLUSTER E OUTRAS COISAS DO MAPA -->
+
+            <!--############################################### 
+                ###            SCRIPT JAVASCRIPT            ###
+                ###############################################-->
+            <script>
+
+                //Inicialização do mapa | [coordenadas], maxzoom
+                var map = L.map('map').setView([-8.052488, -34.885084], 13);
+
+                //Map layer
+                var Stadia_OSMBright = L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png', {
+                    maxZoom: 20,
+                    attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+                });
+                Stadia_OSMBright.addTo(map)
+
+                //Por os dados .json no mapa
+                var markerCluster = L.markerClusterGroup();
+                var dataJson = L.geoJSON(data);
+                dataJson.addTo(markerCluster)
+                markerCluster.addTo(map);
+
+            </script>
+            <!--############################################### 
+                ###            FIM DO SCRIPT                ###
+                ###############################################-->
+
+        </main>
+        
+    </body>
+
+</html>
