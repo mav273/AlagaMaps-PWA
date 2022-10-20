@@ -55,13 +55,56 @@ hr{
 }
 
 .dentro{
-    margin-top: .7rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 #setinha{
+    margin-top: 1rem;
     margin-right: 1rem;
     color: #4758f0;
+}
+.ligaDesliga{
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-right: 10px;
+}
+
+.botao{
+    background-color: #DCDCDC;
+    width: 30px;
+    height: 20px;
+    border: none;
+    border-radius: 24px;
+}
+
+.circulo{
+    background-color: #C6C6C6;
+    width: 25px;
+    height: 25px;
+    border-radius: 16px;
+    margin-left: -40px;
+    transition: all 0.2s;
+}
+
+.check{
+    z-index: 1000;
+    margin-right: -32px;
+    margin-top: -3px;
+    width: 35px;
+    height: 40px;
+    cursor: pointer; 
+    opacity: 0.3;  
+}
+
+.check:checked ~ .circulo{
+    transform: translateX(25px);
+    background-color: #2E3996;
+}
+
+.check:checked ~ .botao{
+    background-color: #4758f0;
 }
