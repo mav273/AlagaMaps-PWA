@@ -26,7 +26,8 @@ const offlineFallbackPage = [
   './dist/MarkerCluster.css',
   './dist/MarkerCluster.Default.css',
 
-  './manifest.json'
+  './manifest.json',
+  'pwabuilder-sw.js'
 ];
 
 self.addEventListener("message", (event) => {
@@ -49,8 +50,8 @@ self.addEventListener('activate', function(event) {
   // Delete all caches that aren't named in CURRENT_CACHES.
   // While there is only one cache in this example, the same logic will handle the case where
   // there are multiple versioned caches.
-  var expectedCacheNames = Object.keys(CACHE).map(function(key) {
-    return CACHE[key];
+  var expectedCacheNames = Object.keys(offlineFallbackPage).map(function(key) {
+    return offlineFallbackPage[key];
   });
 
   event.waitUntil(
