@@ -24,11 +24,7 @@ var ASSETS = [
   './dist/MarkerCluster.Default.css'
 ];
 
-// self.oninstall = function (evt) {
-//   evt.waitUntil(caches.open('offline-cache-name').then(function (cache) {
-//     return cache.addAll(ASSETS);
-//   }))
-// };
+
 this.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
