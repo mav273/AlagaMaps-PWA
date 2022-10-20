@@ -13,6 +13,7 @@
     "scope": "/",
     "short_name": "DropletMap",
     "start_url": "/index.html",
+    "iarc_rating_id":"12+", 
     "screenshots":[
       ],
     "icons": [
@@ -69,7 +70,7 @@
         "type": "image/png"
       }
     ],
-    "categories": ["Mapas", "Transporte","Informação","Natureza"],
+    "categories": ["Mapas", "Transporte","Informação","Chuva","Alagamento"],
     "shortcuts": [
         {
           "name": "Login",
