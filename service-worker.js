@@ -13,14 +13,15 @@ var ASSETS = [
   './Css/mapa.css',
   './Css/telaLogin-Cadastro.css',
 
-  './assets/js/main.js',
-  './assets/js/browser.min.js',
-  './assets/js/jquery.min.js',
-  './assets/js/jquery.poptrox.min.js',
-  './assets/js/jquery.scrollex.min.js',
-  './assets/js/jquery.scrolly.min.js',
-  './assets/js/util.js'
+  './Javascript/pontos.js',
+  './Javascript/responsividade.js',
 
+  './dist/leaflet.markercluster-src.js',
+  './dist/leaflet.markercluster-src.js.map',
+  './dist/leaflet.markercluster.js',
+  './dist/leaflet.markercluster.js.map',
+  './dist/MarkerCluster.css',
+  './dist/MarkerCluster.Default.css'
 ];
 
 // self.oninstall = function (evt) {
