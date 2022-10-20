@@ -21,6 +21,47 @@ header{
     color: #f5f5f5;
 }
 
-i{
+#voltar{
     color: #f5f5f5;
+}
+
+.configConta{
+    margin-top: 1rem;
+    padding: 1rem;
+    margin-bottom: 5px;
+}
+
+.configPrivacidade{
+    padding: 1rem;
+    margin-bottom: 5px;
+}
+
+.configNotificacao{
+    padding: 1rem;
+}
+
+h4{
+    margin-left: 1rem;
+}
+
+h3{
+    color: #4758f0;
+}
+
+hr{
+    background-color: #4758f0;
+    height: 1px;
+    margin: 5px;
+}
+
+.dentro{
+    margin-top: .7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#setinha{
+    margin-right: 1rem;
+    color: #4758f0;
 }
