@@ -11,10 +11,10 @@ const offlineFallbackPage = [
   '/telaContatosUteis.html',
   '/telaPrincipal.html',
 
-  '/Css/contatosUteis.css',
-  '/Css/main.css',
-  '/Css/mapa.css',
-  '/Css/telaLogin-Cadastro.css',
+  './Css/contatosUteis.css',
+  './Css/main.css',
+  './Css/mapa.css',
+  './Css/telaLogin-Cadastro.css',
 
   './Javascript/pontos.js',
   './Javascript/responsividade.js',
@@ -49,18 +49,21 @@ if (workbox.navigationPreload.isSupported()) {
 self.addEventListener('fetch', (event) => {
   if (event.request.mode === 'navigate') {
     event.respondWith((async () => {
-      const cachedResponse = await caches.match(event.request);
-      if (cachedResponse) {
-        return cachedResponse;
+      try {
+        const preloadResp = await event.preloadResponse;
+
+        if (preloadResp) {
+          return preloadResp;
+        }
+
+        const networkResp = await fetch(event.request);
+        return networkResp;
+      } catch (error) {
+
+        const cache = await caches.open(CACHE);
+        const cachedResp = await cache.matchAll(offlineFallbackPage);
+        return cachedResp;
       }
-    
-      const response = await fetch(event.request);
-    
-      if (!response || response.status !== 200 || response.type !== 'basic') {
-        return response;
-      }
-    
-      return response;
     })());
   }
 });
