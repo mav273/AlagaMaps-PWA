@@ -7,6 +7,7 @@ var ASSETS = [
   '/telaCadastro.html',
   '/telaContatosUteis.html',
   '/telaPrincipal.html',
+  '/telaConfig.html',
 
   './Css/contatosUteis.css',
   './Css/main.css',
