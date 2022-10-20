@@ -27,7 +27,7 @@ const offlineFallbackPage = [
   './dist/MarkerCluster.Default.css',
 
   './manifest.json',
-  'pwabuilder-sw.js'
+  './pwabuilder-sw.js'
 ];
 
 self.addEventListener("message", (event) => {
