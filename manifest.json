@@ -2,6 +2,7 @@
     "background_color": "#4758F0",
     "theme_color": "#F5F5F5",
     "dir": "ltr",
+    "Content-Type": "text/html; charset=UTF-8",
     "display": "standalone",
     "name": "DropletMap",
     "orientation": "portrait",
@@ -76,9 +77,16 @@
     ],
     "shortcuts": [
         {
-          "name": "Contatos",
+          "name": "Login",
           "url": "index.html",
-          "description": "Contatos"
+          "description": "Login",
+          "icons": { "96": "icons/android/mipmap-xhdpi/ic_launcher.png"}
+        },
+        {
+          "name": "Mapa",
+          "url": "telaPrincipal.html",
+          "description": "Mapa",
+          "icons": { "96": "icons/android/mipmap-xhdpi/ic_launcher.png" }
         }
       ]
   
