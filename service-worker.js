@@ -21,9 +21,7 @@ var ASSETS = [
   './dist/leaflet.markercluster.js',
   './dist/leaflet.markercluster.js.map',
   './dist/MarkerCluster.css',
-  './dist/MarkerCluster.Default.css',
-
-  './service-worker.js'
+  './dist/MarkerCluster.Default.css'
 ];
 
 
