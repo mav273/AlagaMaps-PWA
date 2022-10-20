@@ -1,8 +1,8 @@
 const OFFLINE_VERSION = 1;
-const CACHE_NAME = 'offline';
+const CACHE_NAME = 'cache';
 // Customize this with a different URL if needed.
 const OFFLINE_URL = 'index.html';
-var ASSETS = [
+const ASSETS = [
   '/index.html',
   '/telaCadastro.html',
   '/telaContatosUteis.html',
@@ -13,6 +13,7 @@ var ASSETS = [
   './Css/main.css',
   './Css/mapa.css',
   './Css/telaLogin-Cadastro.css',
+  './Css/telaConfig.css',
 
   './Javascript/pontos.js',
   './Javascript/responsividade.js',
@@ -28,7 +29,7 @@ var ASSETS = [
 
 this.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('v1').then(function(cache) {
+    caches.open(CACHE_NAME).then(function(cache) {
       return cache.addAll(ASSETS);
     })
   );
@@ -53,7 +54,7 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     // caches.match() will look for a cache entry in all of the caches available to the service worker.
     // It's an alternative to first opening a specific named cache and then matching on that.
-    caches.match(event.request).then(function(response) {
+    caches.match(event.request, { cacheName:CACHE_NAME}).then(function(response) {
       if (response) {
         console.log('Found response in cache:', response);
 
