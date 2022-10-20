@@ -11,16 +11,6 @@
     "start_url": "/index.html",
     "categories": ["Mapas", "Transporte","Informação"],
     "screenshots":[
-        {
-          "src": "images/confirmar.png",
-          "sizes": "540x812",
-          "type": "image/png"
-        },
-        {
-          "src": "images/inicial.png",
-          "sizes": "624x870",
-          "type": "image/png"
-        }
       ],
     "icons": [
       {
@@ -61,13 +51,14 @@
       {
           "src": "icons/Assets.xcassets/AppIcon.appiconset/256.png",
           "sizes": "256x256",
-          "type": "image/png"
+          "type": "image/png",
+          "purpose": "maskable"
       },
       {
           "src": "icons/Assets.xcassets/AppIcon.appiconset/512.png",
           "sizes": "512x512",
           "type": "image/png",
-          "purpose": "any maskable"
+          "purpose": "any"
       },
       {
         "src": "icons/Assets.xcassets/AppIcon.appiconset/1024.png",
