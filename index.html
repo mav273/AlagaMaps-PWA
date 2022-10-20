@@ -7,11 +7,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="./Css/telaLogin-Cadastro.css">
+        <link rel="manifest" href="manifest.json">
+        <meta name="description" content="Tela de Login.">
+
     </head>
 
 
     <body>
-
+        <meta name="theme-color" content="#F5F5F5"/>
         <header>
             <h1>LOGO</h1>
         </header>
@@ -59,7 +62,28 @@
     
             </form>
         </main>
+        <script>
+            let newWorker;
 
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.register('/service-worker.js').then(reg => {
+                reg.addEventListener('updatefound', () => {
+                  // A wild service worker has appeared in reg.installing!
+                  newWorker = reg.installing;
+                  newWorker.addEventListener('statechange', () => {
+                    // Has network.state changed?
+
+                  });
+                });
+              });
+              let refreshing;
+              navigator.serviceWorker.addEventListener('controllerchange', function () {
+                if (refreshing) return;
+                window.location.reload();
+                refreshing = true;
+              });
+            }
+        </script>
     </body>
 
 </html>
