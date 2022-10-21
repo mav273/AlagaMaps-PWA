@@ -5,34 +5,37 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./Css/telaReport.css">
+        <script src="https://kit.fontawesome.com/8fb7393afd.js" crossorigin="anonymous"></script>
         <title>Document</title>
     </head>
 
     <body>
 
         <header>
-
+            <a href="./telaPrincipal.html"><i class="fa-solid fa-arrow-left" id="voltar"></i></a>
+            <div>
+                <a href="./telaPrincipal.html" class="logo">Logo</a>
+            </div>
         </header>
 
-        <main>
+        <main class="container">
+            <h2>Relatar ponto</h2>
+            <form action="">
 
-            <div class="container">
-                <form action="">
-                    
-                    <div class="campoInput">
-                        <label for="latitude">Latitude</label>
-                        <input type="text" name="latitude">
-                    </div>
+                <!--CAMPO DE LOGIN - EMAIL-->
+                <div class="campoInput">
+                    <input type="text" placeholder="Digite a latitude">
+                    <div class="underline"></div>
+                </div>
 
-                    <div class="campoInput">
-                        <label for="longitude">Longitude</label>
-                        <input type="text" name="longitude">
-                    </div>
+                <!--CAMPO DE LOGIN - SENHA-->
+                <div class="campoInput">
+                    <input type="text" placeholder="Digite a longitude"> 
+                    <div class="underline"></div>
+                </div>
 
-                    <input type="submit">
-
-                </form>
-            </div>
+                <input type="submit" value="Relatar ponto">
 
         </main>
 
