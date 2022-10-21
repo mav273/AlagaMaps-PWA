@@ -7,11 +7,11 @@
     "Content-Type": "text/html; charset=UTF-8",
     "display_override": ["fullscreen", "minimal-ui"],
     "display": "standalone",
-    "name": "DropletMap",
+    "name": "AlagaMaps",
     "description": "PWA para monitorar pontos de alagamento na cidade de Recife.",
     "orientation": "portrait",
     "scope": "/",
-    "short_name": "DropletMap",
+    "short_name": "AlagaMaps",
     "start_url": "/index.html",
     "iarc_rating_id":"12+", 
     "screenshots":[
