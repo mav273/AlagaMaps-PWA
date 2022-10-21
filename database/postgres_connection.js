@@ -1,6 +1,6 @@
 const { Client } = require('pg')
 const client = new Client({
-    connectionString: XXXXX,
+    connectionString: 'postgres://htzqnzhcpiaine:a46690fa980c225868d1e494e78e4f62649dd68be5dac5db7bcb5ef89e2113fb@ec2-54-82-205-3.compute-1.amazonaws.com:5432/d1iui2b0rdacdh',
     ssl: {
       rejectUnauthorized: false
     }
@@ -24,4 +24,4 @@ const client = new Client({
     await client.end();
 
   }
-  
+  module.exports ={showAll}

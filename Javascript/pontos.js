@@ -1,4 +1,9 @@
-const data = {
+const db =require ('../database/postgres_connection');
+(async () => {
+const data = await db.showAll()
+console.log(data)
+})();
+/* const data = {
     "type": "FeatureCollection",
     "features": [
       {
@@ -354,4 +359,4 @@ const data = {
         }
       }
     ]
-  }
+  } */
