@@ -2,29 +2,21 @@ const OFFLINE_VERSION = 1;
 const CACHE_NAME = 'offline';
 // Customize this with a different URL if needed.
 const OFFLINE_URL = 'index.html';
-const ASSETS = [
-    '/index.html',
-    '/telaCadastro.html',
-    '/telaContatosUteis.html',
-    '/telaPrincipal.html',
-    '/telaConfig.html',
-  
-    './Css/contatosUteis.css',
-    './Css/main.css',
-    './Css/mapa.css',
-    './Css/telaLogin-Cadastro.css',
-    './Css/telaConfig.css',
-  
-    './Javascript/pontos.js',
-    './Javascript/responsividade.js',
-  
-    './dist/leaflet.markercluster-src.js',
-    './dist/leaflet.markercluster-src.js.map',
-    './dist/leaflet.markercluster.js',
-    './dist/leaflet.markercluster.js.map',
-    './dist/MarkerCluster.css',
-    './dist/MarkerCluster.Default.css'
-  ];
+var ASSETS = [
+  '/index.html',
+  '/telaCadastro.html',
+  '/telaContatosUteis.html',
+  '/telaPrincipal.html',
+  '/telaConfig.html',
+  '/telaSobre.html',
+
+  './Css/contatosUteis.css',
+  './Css/main.css',
+  './Css/mapa.css',
+  './Css/telaLogin-Cadastro.css',
+  './Css/telaConfig.css',
+  './Css/telaSobre.css'
+];
 
 // self.oninstall = function (evt) {
 //   evt.waitUntil(caches.open('offline-cache-name').then(function (cache) {
