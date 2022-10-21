@@ -4,7 +4,18 @@ const CACHE_NAME = 'offline';
 const OFFLINE_URL = 'index.html';
 var ASSETS = [
   '/index.html',
-  '/Css/telaLogin-Cadastro.css'
+  '/telaCadastro.html',
+  '/telaContatosUteis.html',
+  '/telaPrincipal.html',
+  '/telaConfig.html',
+  '/telaSobre.html',
+
+  './Css/contatosUteis.css',
+  './Css/main.css',
+  './Css/mapa.css',
+  './Css/telaLogin-Cadastro.css',
+  './Css/telaConfig.css',
+  './Css/telaSobre.css'
 ];
 
 // self.oninstall = function (evt) {
