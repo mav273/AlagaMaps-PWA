@@ -15,7 +15,17 @@
     "start_url": "/index.html",
     "iarc_rating_id":"12+", 
     "screenshots":[
-      ],
+      {
+        "src": "icons/screenshot/s2.png",
+        "sizes": "540x1100",
+        "type": "image/png"
+      },
+      {
+        "src": "icons/screenshot/s2.png",
+        "sizes": "540x1100",
+        "type": "image/png"
+      }
+    ],
     "icons": [
       {
           "src": "icons/Assets.xcassets/AppIcon.appiconset/48.png",
