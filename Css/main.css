@@ -115,3 +115,37 @@ body{
 .logo:hover{
     opacity: 0.7;
 }
+
+.report{
+    padding: 25px 25px 25px 25px;
+    background-color: rgba(236, 53, 53);
+    border: none;
+    border-radius: 80px;
+}
+
+.report:hover{
+    background-color: rgb(173, 41, 41);
+}
+
+.reportCaixa{
+    position: absolute;
+    z-index: 1000;
+    right: 20px;
+    bottom: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.reportCaixa h4{
+    margin-top: 5px;
+    color: rgba(236, 53, 53);
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.336);
+}
+
+#flag{
+    font-size: 25px;
+    color: #f5f5f5;
+}
