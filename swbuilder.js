@@ -3,7 +3,7 @@ const CACHE_NAME = 'offline';
 // Customize this with a different URL if needed.
 const OFFLINE_URL = 'index.html';
 var ASSETS = [
-  '/index.html',
+  '/offline.html',
   './Css/telaLogin-Cadastro.css'
 
 ];

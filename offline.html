@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login</title>
+        <title>OFFLINE</title>
         <link rel="stylesheet" href="./Css/telaLogin-Cadastro.css">
         <link rel="manifest" href="manifest.json">
         <meta name="description" content="Tela de Login.">
@@ -27,41 +27,8 @@
             <h2>SITE OFFLINE</h2>
             <br>
             <h3>A conexão com o aplicativo foi cortada. Por favor, conecte-se para voltar para o site.</h3>
-            <form action="">
 
-                <input type="submit" value="Login">
-                
-
-                <div class="cadastre-se">
-                    <button>
-                        <a href="./telaCadastro.html">Cadastre-se</a>
-                    </button>
-                </div>
-                    
-            </form>
         </main>
-        <script>
-            let newWorker;
-
-            if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.register('/swbuilder.js').then(reg => {
-                reg.addEventListener('updatefound', () => {
-                  // A wild service worker has appeared in reg.installing!
-                  newWorker = reg.installing;
-                  newWorker.addEventListener('statechange', () => {
-                    // Has network.state changed?
-
-                  });
-                });
-              });
-              let refreshing;
-              navigator.serviceWorker.addEventListener('controllerchange', function () {
-                if (refreshing) return;
-                window.location.reload();
-                refreshing = true;
-              });
-            }
-          </script>
     </body>
 
 </html>
