@@ -86,7 +86,7 @@
                 var markerCluster = L.markerClusterGroup();
                 function data() {
                     const route = "https://servidor-alagamaps.vercel.app/api/pontos/todos";
-                    fetch(route, { mode: "no-cors" }).then((response) => {
+                    fetch(route).then((response) => {
                         response.json().then((pontos) => {
                             console.log(pontos)
                         return pontos;
