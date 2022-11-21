@@ -34,7 +34,7 @@
     </head>
 
     <script src="./dist/leaflet.markercluster.js"></script>
-    <script src="./Javascript/pontos.js"></script>
+    <!-- <script src="./Javascript/pontos.js"></script> -->
 
     <body>
         <meta name="theme-color" content="#F5F5F5"/>
@@ -84,7 +84,16 @@
 
                 //Por os dados .json no mapa
                 var markerCluster = L.markerClusterGroup();
-                var dataJson = L.geoJSON(data);
+                function data() {
+                    const route = "https://servidor-alagamaps.vercel.app/api/pontos/todos";
+                    fetch(route, { mode: "no-cors" }).then((response) => {
+                        response.json().then((pontos) => {
+                            console.log(pontos)
+                        return pontos;
+                        });
+                    });
+                }
+                var dataJson = L.geoJSON(data());
                 dataJson.addTo(markerCluster)
                 markerCluster.addTo(map);
 
