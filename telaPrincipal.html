@@ -84,9 +84,28 @@
 
                 //Por os dados .json no mapa
                 var markerCluster = L.markerClusterGroup();
-                var dataJson = L.geoJSON(data);
-                dataJson.addTo(markerCluster)
-                markerCluster.addTo(map);
+                //Função com .then() (Não functiona)
+                // function dat() {
+                //     const route = "https://servidor-alagamaps.vercel.app/api/pontos/todos";
+                //     fetch(route).then((response) => {
+                //         response.json().then((pontos) => {
+                //             console.log(pontos)
+                //         return pontos;
+                //         });
+                //     });
+                // }
+                async function getPontos() {
+                    const route = "https://servidor-alagamaps.vercel.app/api/pontos/todos";
+                    const d = await fetch(route)
+                    const p = await d.json()
+                    return p
+                }   
+                async function mostrarPontos(){
+                    var dataJson = L.geoJSON(await getPontos());
+                    dataJson.addTo(markerCluster)
+                    markerCluster.addTo(map);
+                }        
+                mostrarPontos()
 
             </script>
             <!--############################################### 
