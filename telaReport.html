@@ -53,7 +53,9 @@
                 //Adcionar ponto ao clicar
                 map.once('click',function(e){
                     var novoMarker = new L.marker(e.latlng, {draggable: true}).addTo(map);
-
+                    var latitude = e.latlng.lat;
+                    var longitude = e.latlng.lng;
+          
                 });
 
             </script>
