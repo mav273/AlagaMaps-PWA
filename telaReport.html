@@ -49,7 +49,15 @@
                     attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
                 });
                 Stadia_OSMBright.addTo(map)
-                
+
+                //Adcionar ponto ao clicar
+                map.once('click',function(e){
+                    var novoMarker = new L.marker(e.latlng, {draggable: true}).addTo(map);
+                    var latitude = e.latlng.lat;
+                    var longitude = e.latlng.lng;
+          
+                });
+
             </script>
 
             <!--############################################### 
