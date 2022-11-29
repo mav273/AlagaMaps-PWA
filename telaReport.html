@@ -49,17 +49,69 @@
                     attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
                 });
                 Stadia_OSMBright.addTo(map)
-
+                var latitude
+                var longitude
                 //Adcionar ponto ao clicar
                 map.once('click',function(e){
-                    var novoMarker = new L.marker(e.latlng, {draggable: true}).addTo(map);
-                    var latitude = e.latlng.lat;
-                    var longitude = e.latlng.lng;
-          
+                    var novoMarker = new L.marker(e.latlng, {draggable: false}).addTo(map);
+                    latitude = e.latlng.lat;
+                    longitude = e.latlng.lng;
+                    document.getElementById("tirarPontoDiv").style.visibility = "visible"
                 });
+                
 
+                async function enviarPonto() {
+                    try{
+                        if (longitude == undefined){
+                            alert('Erro: Escolha um ponto para adicionar ao mapa')
+                            throw('Erro: Escolha um ponto para adicionar ao mapa')
+                        }
+                        else{
+                            if(confirm("Você tem certeza que deseja adicionar o ponto nessa localização?")){
+                            let headerInformacoes = {
+                                "Content-Type": "application/json"
+                            }
+                            let bodyInformacoes = JSON.stringify({
+                                "type":"Point",
+                                "long":longitude,
+                                "lat":latitude
+                            });
+                            fetch("https://servidor-alagamaps.vercel.app/api/pontos/criar", { 
+                                method: "POST",
+                                body: bodyInformacoes,
+                                headers: headerInformacoes
+                            })
+                            .then((data) => {
+                                alert("Ponto cadastrado com sucesso")
+                                paraPrincipal()
+                            })
+                            .catch((e) => alert("Parece que houve um erro ao cadastrar o ponto, tente denovo. Caso o problema persistir, entre em contato conosco."))
+                            }
+                            else{
+                                location.href = "./telaReport.html";
+                            }
+
+                        }
+                    }
+                    catch(e){
+                        console.log(e)
+                    }
+                }   
+                async function paraPrincipal() {
+                    const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+                    await delay(3000)
+                    location.href = "./telaPrincipal.html";
+                }
+
+               
             </script>
-
+            <div class="tirarPontoCaixa" id="tirarPontoDiv">
+                <a href="./telaReport.html" class="tirarPonto"><i class="fa-solid fa-x" id="x"></i></a>
+            </div>
+             
+            <div class="adicionarPontoCaixa">
+                <button onclick="enviarPonto();" class="adicionarPonto"><i class="fa-solid fa-plus" id="plus"></i></a>
+            </div>
             <!--############################################### 
                 ###            FIM DO SCRIPT                ###
                 ###############################################-->
