@@ -51,14 +51,16 @@
                 Stadia_OSMBright.addTo(map)
                 var latitude
                 var longitude
+                var novoMarker
                 //Adcionar ponto ao clicar
-                map.once('click',function(e){
-                    var novoMarker = new L.marker(e.latlng, {draggable: false}).addTo(map);
+                map.on('click',function(e){
+                    if(novoMarker != undefined){map.removeLayer(novoMarker)}
+                    
+                    novoMarker = new L.marker(e.latlng, {draggable: false}).addTo(map);
                     latitude = e.latlng.lat;
                     longitude = e.latlng.lng;
-                    document.getElementById("tirarPontoDiv").style.visibility = "visible"
                 });
-                
+
 
                 async function enviarPonto() {
                     try{
@@ -105,9 +107,6 @@
 
                
             </script>
-            <div class="tirarPontoCaixa" id="tirarPontoDiv">
-                <a href="./telaReport.html" class="tirarPonto"><i class="fa-solid fa-x" id="x"></i></a>
-            </div>
              
             <div class="adicionarPontoCaixa">
                 <button onclick="enviarPonto();" class="adicionarPonto"><i class="fa-solid fa-plus" id="plus"></i></a>
