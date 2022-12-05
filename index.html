@@ -30,7 +30,7 @@
 
                 <!--CAMPO DE LOGIN - EMAIL-->
                 <div class="campoInput">
-                    <input type="email" name="email" id="email" placeholder="Digite o seu email">
+                    <input type="email" name="email" id="emailLogin" placeholder="Digite o seu email">
                     <div class="underline"></div>
                 </div>
 
@@ -39,7 +39,7 @@
                 <!--CAMPO DE LOGIN - SENHA-->
                 <br>
                 <div class="campoInput">
-                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha"> 
+                    <input type="password" name="senha" id="senhaLogin" placeholder="Digite sua senha"> 
                     <div class="underline"></div>
                 </div>
 
@@ -50,7 +50,7 @@
                     </ul>
                 </div>
 
-                <input type="submit" value="Login">
+                <input type="submit" value="Login" onclick="Login()">
 
                 <div class="texto">
                     <h5>Não tem uma conta?</h5>
@@ -66,6 +66,49 @@
     
             </form>
         </main>
+        <script>
+            async function paraPrincipal() {
+                const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+                await delay(1500)
+                location.href = "./telaPrincipal.html";
+            }
+            async function Login(){
+                try{
+                    var emL = document.getElementById('emailLogin').value;
+                    var snhL = document.getElementById('senhaLogin').value;
+                    if(emL == '' || snhL == ''){
+                        alert("Nenhum campo pode ser nulo")
+                    }
+                    else{
+                        let headerInformacoes = {
+                            "Accept": "*/*",
+                            "Content-Type": "application/json"
+                        }
+                        
+                        let bodyInformacoes = JSON.stringify({
+                                "email":emL,
+                                "pwd":snhL
+                        });
+                        
+                        let response = await fetch("https://servidor-alagamaps.vercel.app/api/usuarios/checar", { 
+                            method: "POST",
+                            body: bodyInformacoes,
+                            headers: headerInformacoes
+                        });
+                        
+                        let data = await response.json();
+                        if (typeof(data.id) == 'number'){
+                            alert("Bem vindo(a) " + data.nome)
+                            await paraPrincipal()
+                        }
+
+                }}
+                    catch(e){
+                        console.log(e) 
+                        alert("Parece que houve um erro ao tentar fazer o login, tente denovo. Caso o problema persistir, entre em contato conosco. " + e)}
+
+                }
+        </script>
         <script>
             let newWorker;
 

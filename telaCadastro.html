@@ -55,12 +55,12 @@
                     </ul>
                 </div>
 
-                <input type="submit" value="Cadastrar">
-
+                <input type="submit" value="Cadastrar" onclick="criarConta()">
+                
                 <div class="texto">
                     <h5>Já tem uma conta?</h5>
                 </div>
-                
+
 
                 <div class="cadastre-se">
                     <button>
@@ -71,6 +71,49 @@
     
             </form>
         </main>
+        <script>
+            async function paraLogin() {
+                const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+                await delay(3000)
+                location.href = "./telaPrincipal.html";
+            }
+            function criarConta(){
+
+                var nm = document.getElementById('nome').value;
+                var em = document.getElementById('email').value;
+                var snh = document.getElementById('senha').value;
+                if(nm == '' || em == '' || snh == ''){
+                    alert("Nenhum campo pode ser nulo")
+                }
+                else{
+                    if(confirm("Você tem certeza que deseja criar o usuário?")){
+                        let headerInformacoes = {
+                            "Content-Type": "application/json"
+                        }
+                        let bodyInformacoes = JSON.stringify({
+                            "nome":nm,
+                            "email":em,
+                            "pwd":snh
+                        });
+                        fetch("https://servidor-alagamaps.vercel.app/api/usuarios/criar", { 
+                            method: "POST",
+                            body: bodyInformacoes,
+                            headers: headerInformacoes
+                        })
+                        .then((data) => {
+                            alert("Usuário cadastrado com sucesso")
+                            paraLogin()
+                        })
+                        .catch((e) =>{
+                            console.log(e) 
+                            alert("Parece que houve um erro ao tentar fazer o cadastro, tente denovo. Caso o problema persistir, entre em contato conosco. " + e)})
+                    }
+                    else{
+                        location.href = "./telaCadastro.html";
+                    }
+                }
+            }
+        </script>
         
     </body>
 
