@@ -150,3 +150,8 @@ i{
 .menu ul li a:hover{
     opacity: 0.7;
 }
+
+#iconeMenu{
+    padding-right: 1rem;
+    color: #f5f5f5;
+}
