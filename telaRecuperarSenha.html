@@ -4,26 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Css/recuperarsenha.css">
+    <link rel="stylesheet" href="./Css/telaRecuperarSenha.css">
     <title>Recupere sua senha</title>
  
 </head>
 <body>
+    <meta name="theme-color" content="#F5F5F5"/>
+        <header>
+            <h1>AlagaMaps</h1>
+        </header>
+    <main class="container">
+        <h2>Recuperação de Senha</h2>
+        <br>
+        <form action="" >
 
-    <div class="container">
-        <form class="form-signin" method="POST" action="" style="background:#ffffff;">
-        <h2 class="form-signin-heading text-center">Recuperação de Senha</h2>
-        <div style="padding-bottom: 20px;">
-            <h4>Digite o seu email</h4>
-            <h5>Lembre-se de verificar o spam e a lixeira</h5>
+            <!--CAMPO DE LOGIN - EMAIL-->
+            <div class="campoInput">
+                <input type="email" name="email" id="emailLogin" placeholder="Digite o seu email">
+                <div class="underline"></div>
+            </div>
+
             <br>
-        <label class="sr-only">Email:</label>
-        <input class="form-control" name="email" placeholder="Digite seu email" type="text">
-        </div>
-        <input class="btn btn-lg btn-verde btn-block" value="Recuperar" name="SendRecupSenha" type="submit">
+            
+            <!--CAMPO DE LOGIN - SENHA-->
+            <br>
+
+
+            <!-- ESQUECEU SUA SENHA | ENTRAR SEM LOGIN -->
+
 
         </form>
+
+        <!-- BOTÃO LOGIN -->
+        <button class="buttonLogin" onclick="Checar()">Enviar email</button>
+
+        <!-- REDIRECIONAMENTO PARA TELA CADASTRO -->
+        <div class="texto">
+            <h5></h5>
         </div>
+
+        <div class="cadastre-se">
+            <button>
+                <a href="./index.html">Voltar ao login</a>
+            </button>
+        </div>
+
+    </main>
         
 </body>
 </html>
