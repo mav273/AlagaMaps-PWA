@@ -97,7 +97,7 @@
                 //     });
                 // }
                 async function getPontos() {
-                    const route = "https://servidor-alagamaps.vercel.app/api/pontos/todos";
+                    const route = "http://127.0.0.1:3000/api/pontos/todos";
                     const d = await fetch(route)
                     const p = await d.json()
                     return p
